@@ -145,20 +145,6 @@ namespace SampleLibrary.Contexts
                 entity.Property(e => e.ShipperId).ValueGeneratedNever();
             });
 
-
-            //modelBuilder.Entity<Customers>().HasQueryFilter(cust => cust.CountryIdentifier == 9);
-
-            modelBuilder.Entity<Customers>()
-                .Property<DateTime?>("ModifiedDate");
-
-            foreach (var type in modelBuilder.Model.GetEntityTypes())
-            {
-                if (typeof(ISoftDeleteModel).IsAssignableFrom(type.ClrType))
-                {
-                    modelBuilder.SetSoftDeleteFilter(type.ClrType);
-                }
-            }
-
         }
     }
 }

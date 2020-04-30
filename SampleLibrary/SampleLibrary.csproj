@@ -126,7 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\DbContextExtensions.cs" />
-    <Compile Include="Extensions\EFFilterExtensions.cs" />
     <Compile Include="Interfaces\ISoftDeleteModel.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\Contacts.cs" />

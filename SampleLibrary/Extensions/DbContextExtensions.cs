@@ -11,7 +11,6 @@ namespace SampleLibrary.Extensions
 {
     public static class DbContextExtensions
     {
-        // ReSharper disable once PossibleNullReferenceException
         private static readonly MethodInfo ContainsMethod = typeof(Enumerable).GetMethods()
             .FirstOrDefault(mi => mi.Name == "Contains" && mi.GetParameters().Length == 2)
             .MakeGenericMethod(typeof(object));
