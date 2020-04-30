@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
                 {
                     sb.AppendLine(category.CategoryName);
 
-                    var products = context.Products
+                    List<Products> products = context.Products
                         .AsNoTracking().Where(prod => prod.CategoryId == category.CategoryId)
                         .ToList();
 
