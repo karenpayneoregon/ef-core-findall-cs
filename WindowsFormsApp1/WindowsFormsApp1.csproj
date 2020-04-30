@@ -121,8 +121,6 @@
   <ItemGroup>
     <Compile Include="Classes\CheckedListBoxExtensions.cs" />
     <Compile Include="Classes\ControlExtensions.cs" />
-    <Compile Include="Classes\PropertyHelper.cs" />
-    <Compile Include="Classes\SortableBindingList.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
