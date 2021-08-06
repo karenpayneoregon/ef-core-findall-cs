@@ -40,12 +40,15 @@ namespace WindowsFormsApp1
                     var categories = await context.Categories.AsNoTracking().ToListAsync();
                     CategoryCheckedListBox.InvokeIfRequired(clb => clb.DataSource = categories);
                 });
-                
+
             }
 
             GetSelectedButton.Enabled = true;
         }
-        private async void GetSelectedButton_Click(object sender, EventArgs e)
+
+
+
+    private async void GetSelectedButton_Click(object sender, EventArgs e)
         {
             ResultsTextBox.Text = "";
             var sb = new StringBuilder();

@@ -1,0 +1,1 @@
+﻿Classes for configuring each model in the database. This is different from the project SampleLibrary which uses an older version of Entity Framework which did not support separating configurations from it's `DbContext`.

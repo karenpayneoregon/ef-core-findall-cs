@@ -1,37 +1,14 @@
 # About
 
-This repository contains a Entity Framework Core language extension for finding multiple keys in a model.
+This Visual Studio solution was originally for a Microsoft article [Entity Framework Core Find all by primary key (C#)](https://social.technet.microsoft.com/wiki/contents/articles/53841.entity-framework-core-find-all-by-primary-key-c.aspx).
+Currently has a class and form project to demonstrate code for the above article along with two new projects to show simple editing a record using a newer version of Entity Framework Core and C#9.
 
-# Step 1
+Screenshot for original code sample
 
-Read the following article
+![img](assets/find.png)
 
-[Microsoft TechNet article](https://social.technet.microsoft.com/wiki/contents/articles/53841.entity-framework-core-find-all-by-primary-key-c.aspx)
+Screenshot for CRUD example
 
-# Step 2 - Before running any code
+![img](assets/simple.png)
 
-Using SSMS (SQL-Server Management Studio) create a new database named `NorthWindAzureForInserts`. Once created run the script in NorthWindScript.sql
-
-
-
-# Step 3 -  Steps to run code
-
-- Open Solution Explorer
-  - Right click on top node
-  - Select `Manage NuGet Packages for this solution`
-  - A new window appears
-  - In the upper right corner select `Restore`, wait for process to finish (see **figure 1**).
-- Right click on top node of Solution Explorer
-  - Select `Rebuild Solution`
-- Right click on the node `WindowsFormsApp1` in Solution Explorer
-  - Select `Set as Startup project`
-- Click the Start button under Visual Studio's menu to run the project
-
-### Figure 1
-
-![img](assets/missing.png)
-
-
-# Screen shot
-
- ![img](assets/find.png)
+:red_circle: Normally desktop application would not be used, instead unit test projects so that the code may be used in a desktop or web application. Since many developers avoid unit test this is the reason for desktop projects.
