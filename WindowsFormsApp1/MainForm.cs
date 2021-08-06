@@ -15,9 +15,6 @@ using System.Reflection;
 using WindowsFormsApp1.Classes;
 using SampleLibrary.Contexts;
 using SampleLibrary.Extensions;
-using static Microsoft.EntityFrameworkCore.EF;
-using EntityState = System.Data.EntityState;
-
 
 namespace WindowsFormsApp1
 {
@@ -43,9 +40,12 @@ namespace WindowsFormsApp1
                     var categories = await context.Categories.AsNoTracking().ToListAsync();
                     CategoryCheckedListBox.InvokeIfRequired(clb => clb.DataSource = categories);
                 });
+                
             }
+
+            GetSelectedButton.Enabled = true;
         }
-        private async void SelectedButton_Click(object sender, EventArgs e)
+        private async void GetSelectedButton_Click(object sender, EventArgs e)
         {
             ResultsTextBox.Text = "";
             var sb = new StringBuilder();
@@ -64,8 +64,7 @@ namespace WindowsFormsApp1
                  * object array not an int array so they are converted via
                  * Array.ConvertAll.
                  */
-                Categories[] categories = await context.FindAllAsync<Categories>(
-                    Array.ConvertAll(indices, id => (object)id));
+                Categories[] categories = await context.FindAllAsync<Categories>(Array.ConvertAll(indices, id => (object)id));
 
                 /*
                  * Display in a text box

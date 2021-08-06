@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.GetSelectedButton = new System.Windows.Forms.Button();
             this.CategoryCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.ResultsTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // GetSelectedButton
             // 
-            this.button1.Location = new System.Drawing.Point(198, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Get selected";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.SelectedButton_Click);
+            this.GetSelectedButton.Enabled = false;
+            this.GetSelectedButton.Location = new System.Drawing.Point(198, 20);
+            this.GetSelectedButton.Name = "GetSelectedButton";
+            this.GetSelectedButton.Size = new System.Drawing.Size(91, 23);
+            this.GetSelectedButton.TabIndex = 1;
+            this.GetSelectedButton.Text = "Get selected";
+            this.GetSelectedButton.UseVisualStyleBackColor = true;
+            this.GetSelectedButton.Click += new System.EventHandler(this.GetSelectedButton_Click);
             // 
             // CategoryCheckedListBox
             // 
@@ -90,7 +91,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ResultsTextBox);
             this.Controls.Add(this.CategoryCheckedListBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.GetSelectedButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -101,7 +102,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button GetSelectedButton;
         private System.Windows.Forms.CheckedListBox CategoryCheckedListBox;
         private System.Windows.Forms.TextBox ResultsTextBox;
         private System.Windows.Forms.Label label1;

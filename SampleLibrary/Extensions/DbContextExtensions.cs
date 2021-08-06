@@ -14,6 +14,7 @@ namespace SampleLibrary.Extensions
         private static readonly MethodInfo ContainsMethod = typeof(Enumerable).GetMethods()
             .FirstOrDefault(mi => mi.Name == "Contains" && mi.GetParameters().Length == 2)
             .MakeGenericMethod(typeof(object));
+        
         /// <summary>
         /// Find by primary key
         /// </summary>
@@ -27,7 +28,9 @@ namespace SampleLibrary.Extensions
             var primaryKey = entityType.FindPrimaryKey();
 
             if (primaryKey.Properties.Count != 1)
+            {
                 throw new NotSupportedException("Only a single primary key is supported");
+            }
 
             var pkProperty = primaryKey.Properties[0];
             var pkPropertyType = pkProperty.ClrType;
@@ -36,14 +39,18 @@ namespace SampleLibrary.Extensions
             foreach (var keyValue in keyValues)
             {
                 if (!pkPropertyType.IsInstanceOfType(keyValue))
+                {
                     throw new ArgumentException($"Key value '{keyValue}' is not of the right type");
+                }
             }
 
             // retrieve member info for primary key
             var pkMemberInfo = typeof(T).GetProperty(pkProperty.Name);
 
             if (pkMemberInfo == null)
+            {
                 throw new ArgumentException("Type does not contain the primary key as an accessible property");
+            }
 
             // build lambda expression
             var parameter = Expression.Parameter(typeof(T), "e");
