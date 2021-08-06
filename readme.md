@@ -12,6 +12,12 @@ The following
 - [SSMS](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms?view=sql-server-ver15)
 - [.NET Core 5](https://dotnet.microsoft.com/download)
 
+## Pluralsight resources
+
+- [C# Fundamentals](https://app.pluralsight.com/library/courses/csharp-fundamentals-dev/table-of-contents)
+- [Entity Framework Core: Getting Started](https://app.pluralsight.com/library/courses/entity-framework-core-get-started/table-of-contents)
+- [Preparing Your Move to Entity Framework Core 5](https://app.pluralsight.com/library/courses/preparing-your-move-entity-framework-core-5-webinar/table-of-contents)
+
 ## First steps
 
 - Clone this repository, see **Clone repository** below. Best using [GitDesktop](https://desktop.github.com/) while using **Download ZIP** usually sets `mark of the web` and if so Visual Studio will not compile, use PowerShell code found [here](#Unblock-Files-in-Folder).
