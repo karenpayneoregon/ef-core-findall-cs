@@ -49,7 +49,7 @@ namespace SampleLibraryCore.Data
                  */
                 optionsBuilder.UseSqlServer(
                     "Data Source=.\\SQLEXPRESS;Initial Catalog=NorthWindAzureForInserts;" + 
-                                "Integrated Security=True");
+                                "Integrated Security=True").AddInterceptors(new CustomInterceptor1());
             }
         }
 

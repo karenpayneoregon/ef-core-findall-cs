@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,9 +25,7 @@ namespace WindowsFormsApp2.Classes
             await using var context = new NorthWindContext();
             
             return await Task.Run(() => 
-                context
-                    .Employees
-                    .FirstOrDefaultAsync(emp => emp.EmployeeId == identifier));
+                context.Employees.FirstOrDefaultAsync(emp => emp.EmployeeId == identifier));
         }
 
         /// <summary>
@@ -55,6 +54,8 @@ namespace WindowsFormsApp2.Classes
              * Connect to database
              */
             using var context = new NorthWindContext();
+            context.SavedChanges += ContextOnSavedChanges;
+            context.SaveChangesFailed += ContextOnSaveChangesFailed;
 
             /*
              * Tell Entity Framework we are saving changes to an existing record,
@@ -71,5 +72,14 @@ namespace WindowsFormsApp2.Classes
             return context.SaveChanges() == 1;
         }
 
+        private static void ContextOnSaveChangesFailed(object? sender, SaveChangesFailedEventArgs saveChangesFailedEvent)
+        {
+            Debug.WriteLine(saveChangesFailedEvent.Exception.Message);
+        }
+
+        private static void ContextOnSavedChanges(object? sender, SavedChangesEventArgs savedChangesEvent)
+        {
+            Console.WriteLine();
+        }
     }
 }
